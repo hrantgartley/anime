@@ -7,6 +7,7 @@ pub trait Anime {
     fn generate_score(&self) -> i32;
     fn rating(&self) -> String;
     fn print_anime(&self, name: String, episode: u32, score: i32, rating: String);
+    fn run(&self);
 }
 
 impl Anime for String {
@@ -48,5 +49,12 @@ impl Anime for String {
         println!("Anime name: {}", name);
         println!("Rating: {}/10", score);
         println!("Watch rating: {}", rating);
+    }
+    fn run(&self) {
+        let name = self.name();
+        let episode = self.episode();
+        let score = self.generate_score();
+        let rating = self.rating();
+        self.print_anime(name, episode, score, rating);
     }
 }
