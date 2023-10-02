@@ -1,5 +1,11 @@
 use rand::prelude::*;
 use std::io;
+#[allow(dead_code)]
+
+struct PlaceHolder {
+    title: String,
+    total_runtime: u64,
+}
 
 pub trait Anime {
     fn name(&self) -> String;
