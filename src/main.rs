@@ -2,6 +2,6 @@ mod anime;
 use anime::Anime;
 
 fn main() {
-    let anime = String::new();
-    anime.run();
+    let title = String::new();
+    title.run();
 }
