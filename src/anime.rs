@@ -1,11 +1,13 @@
 use rand::prelude::*;
 use std::io;
 
+#[allow(dead_code)]
 pub struct AnimeData {
     name: String,
     episode: u32,
     score: i32,
     rating: String,
+    release_year: u32
 }
 
 impl AnimeData {
@@ -22,6 +24,7 @@ impl AnimeData {
             episode,
             score,
             rating,
+            release_year: 0
         }
     }
 
