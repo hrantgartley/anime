@@ -7,7 +7,30 @@ pub struct AnimeData {
     episode: u32,
     score: i32,
     rating: String,
-    release_year: u32
+    release_year: u32,
+}
+
+pub struct Episode {
+    length: String,
+    num_actors: u16,
+}
+
+impl Episode {
+    pub fn create_new_episode() -> Episode {
+        let length = Episode::read_input("Enter episode length: ");
+        let num_actors = Episode::read_input("Enter number of actors: ")
+            .parse()
+            .expect("Please type a number!");
+        Episode { length, num_actors }
+    }
+    fn read_input(prompt: &str) -> String {
+        let mut line = String::new();
+        println!("{}", prompt);
+        io::stdin()
+            .read_line(&mut line)
+            .expect("Failed to read line");
+        line.trim().to_string()
+    }
 }
 
 impl AnimeData {
@@ -24,7 +47,7 @@ impl AnimeData {
             episode,
             score,
             rating,
-            release_year: 0
+            release_year: 0,
         }
     }
 
